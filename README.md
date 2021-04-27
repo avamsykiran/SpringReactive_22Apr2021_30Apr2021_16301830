@@ -140,8 +140,43 @@ Spring Reactive
 
                     Either completes with an success or with an error event. It never emits items. The reactive version of a Runnable.
 
-              Project Reactor       encapsualtion of RxJava2
-            -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+        Project Reactor       encapsualtion of RxJava2
+        -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
-                Flux                    Observable
-                Mono                    Single
+        <dependency>
+            <groupId>io.projectreactor</groupId>
+            <artifactId>reactor-core</artifactId>
+            <version>3.3.9.RELEASE</version>
+        </dependency>
+
+            RxJava 2	    Reactor	
+            --------------------------------------------------------
+            Completable	    N/A	    
+            Maybe<T>	    Mono<T>	
+            Single<T>	    N/A
+             Observable<T>	N/A
+            Flowable<T>	    Flux<T>	
+
+            Flowable and Flux have very similar API. Obviously, they both support basic 
+            operators like map(), filter(), flatMap(), as well as more advanced ones.
+
+            RxJava 2.x still support Java 6 as it is widely used on Android. 
+            Reactor, on the other hand, targets Java 8+. 
+
+            We are free to use Reactor without Spring framework. 
+            We can also use Spring framework without Reactor. 
+            But it just so happens that they integrate very tightly and Spring WebFlux uses Mono and Flux extensively.
+
+            Thus leaves no significance to use RxJava on Spring though it is possible.
+
+
+            Streams API     vs      Project Reactor
+            -----------------------------------------------------------
+            Not Asynchronous       Asynchronous
+
+            Push                   Pull
+
+            is a support           Ractive Framework
+            for non-blocking
+            process 
+

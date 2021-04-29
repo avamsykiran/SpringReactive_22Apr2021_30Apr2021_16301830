@@ -3,15 +3,12 @@ package com.cts.swfd.model;
 import java.io.Serializable;
 import java.util.Set;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
 public class Department implements Serializable {
 	
 	private Integer deptId;
 	private String title;
 	private String location;
 	
-	@JsonIgnore
 	private Set<Employee> employees;
 	
 	public Department() {

@@ -1,0 +1,25 @@
+
+<div class="alert alert-info" *ngIf="!isComplete && !errMsg">
+    <strong>Please wait while laoding data...</strong>
+</div>
+
+<div class="alert alert-danger" *ngIf="errMsg">
+    <strong>{{errMsg}}</strong>
+</div>
+
+<table class="table table-bordered table-hover" *ngIf="depts && depts.length>0">
+    <thead>
+        <tr>
+            <th>Departemnt#</th>
+            <th>Title</th>
+            <th>Location</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let d of depts">
+            <td>{{d.deptId}}</td>
+            <td>{{d.title}}</td>
+            <td>{{d.loction}}</td>
+        </tr>
+    </tbody>
+</table>
